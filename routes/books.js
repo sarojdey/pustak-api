@@ -5,6 +5,25 @@ const { Books } = require("../models");
 
 const router = express.Router();
 
+//! Route to create a book
+router.post("/create", async (req, res) => {
+  try {
+    const newBook = await Books.create({
+      title: "Pride and Prejudice",
+      author: "Jane Austen",
+      price: 200,
+      genre: "Classic",
+      pages: 500,
+      path: "/pride-and-prejudice",
+    });
+
+    res.status(201).json({ message: "Book created successfully", newBook });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
 router.get("/", async (req, res) => {
   res.sendFile(path.join(__dirname, "../api.html"));
 });
