@@ -1,9 +1,13 @@
 const express = require("express");
+const path = require("path");
 const { Op } = require("sequelize");
 const { Books } = require("../models");
 
 const router = express.Router();
 
+router.get("/", async (req, res) => {
+  res.sendFile(path.join(__dirname, "../api.html"));
+});
 router.get("/book", async (req, res) => {
   try {
     const books = await Books.findAll();

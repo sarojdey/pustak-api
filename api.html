@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Instructions</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #1a1e2c;
+        color: #c7d3e3;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #222740;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+      }
+
+      h1 {
+        color: #c7d3e3;
+        margin: 0 0 20px;
+        font-size: 32px;
+      }
+
+      h2 {
+        color: #9fb8d1;
+        margin: 20px 0 10px;
+        font-size: 24px;
+      }
+
+      p {
+        margin: 0 0 15px;
+        color: #a9b9cc;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      code {
+        background-color: #34425e;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+        color: #c7d3e3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the Book API</h1>
+      <p>This API provides endpoints to retrieve information about books.</p>
+      <h2>Endpoints:</h2>
+      <ul>
+        <li>GET /api/book - Get all books</li>
+        <li>GET /api/book/:id - Get book by ID</li>
+        <li>GET /api/book/genre/:genre - Get books by genre</li>
+        <li>GET /api/book/author/:author - Get books by author</li>
+        <li>
+          GET /api/book/search/:query - Search for books by title, author, or
+          genre
+        </li>
+      </ul>
+      <h2>Usage:</h2>
+      <p>
+        To retrieve books, make a GET request to the corresponding endpoint.
+      </p>
+      <p>For example:</p>
+      <ul>
+        <li>To get all books: <code>/api/book</code></li>
+        <li>To get a book by ID: <code>/api/book/123</code></li>
+        <li>
+          To get books by genre (replace spaces with hyphens):
+          <code>/api/book/genre/science-fiction</code>
+        </li>
+        <li>
+          To get books by author (replace spaces with hyphens):
+          <code>/api/book/author/j-k-rowling</code>
+        </li>
+        <li>
+          To search for books (replace spaces with hyphens):
+          <code>/api/book/search/harry-potter</code>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
